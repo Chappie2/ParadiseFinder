@@ -1,12 +1,17 @@
-.carousel{
-    width: 100%;
-    height: 550px;
+#logoNavbar {
+  width: 70px;
+  height: 45px;
 }
-.search{
-    position: relative;
-    bottom: 0     ;
-    right: 50px      ;
 
+.carousel {
+  width: 100%;
+  height: 550px;
+}
+
+.search{ 
+  position: relative;
+  bottom: 0;
+  right: 50px;
 }
 
 footer {
@@ -15,12 +20,9 @@ footer {
 }
 
 form {
-
   font-size: 12px;
   padding: 50px;
   margin-right: 50%;
-
-
 }
 
 .form-control {
@@ -36,5 +38,7 @@ form {
   text-align: right;
   padding: 20px;
 }
-h1{text-align: center;
+
+h1 {
+  text-align: center;
 }
