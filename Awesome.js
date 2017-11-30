@@ -43,6 +43,15 @@ $(() => {
     $("#submit").on("click", () => {
        alert()
     })  */ 
+    $('#ExpandButton1').click(function(){
+        $('#ExpandText1').toggle();
+    });  
+    $('#ExpandButton2').click(function(){
+        $('#ExpandText2').toggle();
+    });  
+    $('#ExpandButton3').click(function(){
+        $('#ExpandText3').toggle();
+    });  
 })
 //how to click on and when click again than object will hide?
 // modals
