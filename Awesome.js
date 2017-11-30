@@ -44,13 +44,13 @@ $(() => {
        alert()
     })  */ 
     $('#ExpandButton1').click(function(){
-        $('#ExpandText1').toggle();
+        $('#ExpandText1').toggle('slow');
     });  
     $('#ExpandButton2').click(function(){
-        $('#ExpandText2').toggle();
+        $('#ExpandText2').toggle('slow');
     });  
     $('#ExpandButton3').click(function(){
-        $('#ExpandText3').toggle();
+        $('#ExpandText3').toggle('slow');
     });  
 })
 //how to click on and when click again than object will hide?

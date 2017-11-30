@@ -56,3 +56,14 @@ h3{
 p {
   text-align: justify
 }
+#ExpandText1{
+  display:none;
+}
+
+#ExpandText2{
+  display:none;
+}
+
+#ExpandText3{
+  display:none;
+}
