@@ -70,7 +70,7 @@
               <img src="Pineapple2.png" alt="..." class="carousel">
               <div class="carousel-caption d-none d-md-block">
                 <form class="form-inline my-2 my-lg-0" class="search">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Enter your destination...">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Enter your destination..."  id="Banana">
                   <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
               </div>
@@ -169,5 +169,14 @@
       </form>
       <h3 class="update">Webpage last updated on 29 November 2017 <h3>
     </footer>
+    <!-- Searchbar APIs -->
+    <script>
+    function activatePlacesSearch(){
+      var input = document.getElementById('Banana')
+      var autocomplete = new google.maps.places.Autocomplete(input)
+      console.log(autocomplete)
+    }
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWw-ZR3_mHPezBX4RUi62eJXiuW0U3e9Q&libraries=places&callback=activatePlacesSearch"></script>    
   </body>
 </html>
