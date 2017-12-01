@@ -1,25 +1,33 @@
 $(() => {
-    var latitude = 23.1135925;
-    var longitude = -82.36659559999998;
-    var coords = {lat: latitude, lng: longitude}
     $(document).ready(function($){
-        var ac = new google.maps.places.Autocomplete(document.getElementById('Banana'));
+        var defaultBounds = new google.maps.LatLngBounds(
+            new google.maps.LatLng(23.1135925, -82.36659559999998),
+            new google.maps.LatLng(23.0635925, -82.1259559999998)
+        )
+        var options = {
+            bounds: defaultBounds
+        };
+        var latlng;
+        var input = document.getElementById('Banana');
+        var ac = new google.maps.places.Autocomplete(input);
         console.log(ac);
         google.maps.event.addListener(ac, 'place_changed', function(){
             var place = ac.getPlace();
              latitude = place.geometry.location.lat();
              longitude = place.geometry.location.lng();
+            var latlng = place.geometry.location
             console.log(place.formatted_address);
             console.log(place.url);
-            console.log(place.geometry.location);
+            console.log(latlng);
             console.log(latitude);
             console.log(longitude);
 
            $('#buttonSearch').on('click', function(e){
            console.log('I am clicked');
-           addCoord(coords);
+           addCoord(latlng);
          })})
-    
+         google.maps.event.addDomListener(window,'load')
+         
    
         });
             var styledMapType = new google.maps.StyledMapType(
@@ -134,11 +142,11 @@ $(() => {
                       }
                     ],
                     {name: 'Styled Map'});
-                function addCoord(coords){
+                function addCoord(latlng){
                 // Create a map object, and include the MapTypeId to add
                 // to the map type control.
                 var map = new google.maps.Map(document.getElementById('map'), {
-                  center: coords,
+                  center: latlng,
                   zoom: 9,
                   mapTypeControlOptions: {
                     mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
@@ -147,7 +155,7 @@ $(() => {
                 });
                 // Add Marker
                 var marker = new google.maps.Marker({
-                  position: coords,
+                  position: latlng,
                   map: map,
                   icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
                 })
@@ -156,7 +164,7 @@ $(() => {
                 map.setMapTypeId('styled_map');
               }
 
-              addCoord(coords)
+              addCoord(latlng)
               console.log(latitude,longitude)    
            
     // not working needs to show the map upon click (See class=Gmap in HTML)
