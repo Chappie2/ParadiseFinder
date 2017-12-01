@@ -44,6 +44,10 @@ h1 {
   font-family: 'BioRhyme';
 }
 
+.card {
+  width: 20rem;
+}
+
 h2 {
   text-align: justify;
   font-size: 24px;
