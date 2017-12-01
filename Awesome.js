@@ -22,7 +22,7 @@ $(() => {
             console.log(latitude);
             console.log(longitude);
 
-           $('#buttonSearch').on('click', function(e){
+           $('#search3').on('click', function(e){
            console.log('I am clicked');
            addCoord(latlng);
          })})
@@ -30,6 +30,68 @@ $(() => {
          
    
         });
+        $(document).ready(function($){
+            var defaultBounds = new google.maps.LatLngBounds(
+                new google.maps.LatLng(23.1135925, -82.36659559999998),
+                new google.maps.LatLng(23.0635925, -82.1259559999998)
+            )
+            var options = {
+                bounds: defaultBounds
+            };
+            var latlng;
+            var input = document.getElementById('Orange');
+            var ac = new google.maps.places.Autocomplete(input);
+            console.log(ac);
+            google.maps.event.addListener(ac, 'place_changed', function(){
+                var place = ac.getPlace();
+                 latitude = place.geometry.location.lat();
+                 longitude = place.geometry.location.lng();
+                var latlng = place.geometry.location
+                console.log(place.formatted_address);
+                console.log(place.url);
+                console.log(latlng);
+                console.log(latitude);
+                console.log(longitude);
+    
+               $('#search2').on('click', function(e){
+               console.log('I am clicked');
+               addCoord(latlng);
+             })})
+             google.maps.event.addDomListener(window,'load')
+             
+       
+            });
+            $(document).ready(function($){
+                var defaultBounds = new google.maps.LatLngBounds(
+                    new google.maps.LatLng(23.1135925, -82.36659559999998),
+                    new google.maps.LatLng(23.0635925, -82.1259559999998)
+                )
+                var options = {
+                    bounds: defaultBounds
+                };
+                var latlng;
+                var input = document.getElementById('Melon');
+                var ac = new google.maps.places.Autocomplete(input);
+                console.log(ac);
+                google.maps.event.addListener(ac, 'place_changed', function(){
+                    var place = ac.getPlace();
+                     latitude = place.geometry.location.lat();
+                     longitude = place.geometry.location.lng();
+                    var latlng = place.geometry.location
+                    console.log(place.formatted_address);
+                    console.log(place.url);
+                    console.log(latlng);
+                    console.log(latitude);
+                    console.log(longitude);
+        
+                   $('.buttonSearch').on('click', function(e){
+                   console.log('I am clicked');
+                   addCoord(latlng);
+                 })})
+                 google.maps.event.addDomListener(window,'load')
+                 
+           
+                });
             var styledMapType = new google.maps.StyledMapType(
                     [
                       {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
