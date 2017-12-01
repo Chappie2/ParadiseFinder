@@ -14,8 +14,11 @@
   right: 50px;
 }
 
+#form-container {
+  margin-top: 20px;
+}
+
 footer {
-  background-color: #ffcc5c;
   margin-top: 150px;
 }
 
